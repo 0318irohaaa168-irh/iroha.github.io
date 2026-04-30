@@ -3,47 +3,64 @@ body {
   font-family: "Arial", sans-serif;
   color: #d6e6ff;
 
-  /* 🌊 深淵＋宇宙グラデーション */
+  /* 🌌 深淵ベース */
   background:
-    radial-gradient(circle at 20% 30%, #001a33 0%, transparent 60%),
-    radial-gradient(circle at 80% 70%, #00060f 0%, transparent 55%),
-    linear-gradient(180deg, #000010 0%, #000000 60%, #000008 100%);
+    radial-gradient(circle at 20% 30%, #001a33 0%, transparent 55%),
+    radial-gradient(circle at 80% 70%, #00060f 0%, transparent 60%),
+    linear-gradient(180deg, #000010 0%, #000000 70%, #000008 100%);
   overflow-x: hidden;
 }
 
-/* 🌌 深海の揺らぎ */
+/* 🌊 深海の層（ゆらぎ模様） */
 body::before {
   content: "";
   position: fixed;
   width: 200%;
   height: 200%;
   background:
-    radial-gradient(circle at 10% 20%, rgba(80,150,255,0.15) 0%, transparent 30%),
-    radial-gradient(circle at 70% 60%, rgba(0,200,255,0.08) 0%, transparent 40%),
-    radial-gradient(circle at 40% 80%, rgba(0,80,200,0.10) 0%, transparent 35%);
-  animation: drift 180s linear infinite;
+    radial-gradient(circle at 10% 20%, rgba(80,150,255,0.12) 0%, transparent 25%),
+    radial-gradient(circle at 70% 60%, rgba(0,200,255,0.08) 0%, transparent 30%),
+    radial-gradient(circle at 40% 80%, rgba(0,80,200,0.10) 0%, transparent 35%),
+
+    /* 🌊 波模様（追加） */
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(120,180,255,0.05) 0px,
+      rgba(120,180,255,0.05) 2px,
+      transparent 6px,
+      transparent 12px
+    );
+
+  animation: drift 200s linear infinite;
   z-index: -2;
 }
 
-/* ✨ 星（深海粒子＋宇宙） */
+/* ✨ 星＋粒子＋深海ノイズ */
 body::after {
   content: "";
   position: fixed;
   width: 200%;
   height: 200%;
   background-image:
+
+    /* 星層 */
     radial-gradient(1px 1px at 20px 30px, rgba(180,220,255,0.8), transparent),
-    radial-gradient(1px 1px at 120px 80px, rgba(100,180,255,0.6), transparent),
+    radial-gradient(1px 1px at 120px 80px, rgba(120,200,255,0.6), transparent),
     radial-gradient(1px 1px at 200px 150px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(2px 2px at 300px 220px, rgba(120,200,255,0.5), transparent),
-    radial-gradient(1px 1px at 400px 100px, rgba(80,160,255,0.6), transparent);
+    radial-gradient(2px 2px at 300px 220px, rgba(100,180,255,0.5), transparent),
+
+    /* 🫧 深海バブル模様 */
+    radial-gradient(circle at 60px 100px, rgba(100,180,255,0.08) 2px, transparent 3px),
+    radial-gradient(circle at 180px 200px, rgba(120,220,255,0.06) 3px, transparent 5px),
+    radial-gradient(circle at 320px 140px, rgba(80,160,255,0.05) 2px, transparent 4px);
+
   background-size: 500px 500px;
-  opacity: 0.25;
-  animation: drift2 240s linear infinite;
+  opacity: 0.3;
+  animation: drift2 260s linear infinite;
   z-index: -1;
 }
 
-/* 🌊 ゆっくり流れる深淵 */
+/* 🌊 流れ */
 @keyframes drift {
   from { transform: translate(0,0); }
   to { transform: translate(-300px, -200px); }
@@ -54,22 +71,26 @@ body::after {
   to { transform: translate(200px, 300px); }
 }
 
-/* 🧊 ヘッダー（深海圧力層） */
+/* 🧊 ヘッダー（深海プレート） */
 header {
   text-align: center;
   padding: 60px 20px;
 
-  background: linear-gradient(
-    180deg,
-    rgba(0,10,30,0.7),
-    rgba(0,0,0,0.2)
-  );
+  background:
+    linear-gradient(180deg, rgba(0,20,50,0.7), rgba(0,0,0,0.2)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(80,140,255,0.05),
+      rgba(80,140,255,0.05) 2px,
+      transparent 2px,
+      transparent 8px
+    );
 
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(120,180,255,0.15);
+  border-bottom: 1px solid rgba(120,180,255,0.2);
 }
 
-/* 🐋 タイトル（深淵発光） */
+/* 🌌 タイトル */
 h1 {
   font-size: 2.6em;
   letter-spacing: 3px;
@@ -81,43 +102,22 @@ h1 {
     0 0 60px rgba(0,60,180,0.3);
 }
 
-/* 🌊 サブタイトル */
-h2 {
-  color: #66b3ff;
-  text-shadow: 0 0 12px rgba(100,180,255,0.4);
-}
-
-/* 🌌 ナビ（海中光） */
-nav a {
-  margin: 0 12px;
-  color: #a8d6ff;
-  text-decoration: none;
-  position: relative;
-  transition: 0.3s;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 1px;
-  background: #66ccff;
-  transition: 0.4s;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* 🪼 セクション（深海浮遊体） */
+/* 🌊 セクション（地層・水圧感） */
 section {
   max-width: 850px;
   margin: 60px auto;
   padding: 35px;
 
-  background: rgba(0, 20, 50, 0.25);
+  background:
+    linear-gradient(135deg, rgba(0,20,50,0.25), rgba(0,0,0,0.1)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(120,180,255,0.03),
+      rgba(120,180,255,0.03) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+
   border: 1px solid rgba(120,180,255,0.12);
   border-radius: 18px;
 
@@ -126,7 +126,7 @@ section {
     inset 0 0 25px rgba(0,80,200,0.05);
 }
 
-/* 🌊 リンク（発光粒子） */
+/* 🌊 リンク */
 a {
   color: #8ecbff;
   transition: 0.3s;
@@ -139,7 +139,7 @@ a:hover {
     0 0 20px #3399ff;
 }
 
-/* 🌑 フッター（深淵の底） */
+/* 🌑 フッター（深淵底） */
 footer {
   text-align: center;
   padding: 40px;
