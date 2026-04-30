@@ -87,15 +87,15 @@ nav a:hover {
 
 /* 📄 セクション（全部中央） */
 section {
-  max-width: 900px;
-  margin: 50px auto;
+  width: 900px;          /* ←固定幅にするのがポイント */
+  margin: 50px auto;     /* ←完全中央 */
+
   padding: 30px;
 
   background: rgba(10, 15, 25, 0.55);
   border-radius: 16px;
 
   backdrop-filter: blur(8px);
-
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
