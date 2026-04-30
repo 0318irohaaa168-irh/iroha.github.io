@@ -1,18 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: #d6e6ff;
+  font-family: "Arial", sans-serif;
+  color: #eaf2ff;
+  line-height: 1.6;
 
-  /* 🌌 暗すぎ問題を解消した深宇宙背景 */
-  background:
-    radial-gradient(circle at 20% 30%, #103b66 0%, transparent 55%),
-    radial-gradient(circle at 80% 70%, #103a6e 0%, transparent 60%),
-    linear-gradient(180deg, #122756 0%, #1a315e 100%);
+  /* 背景はあえてシンプル（木星を主役にする） */
+  background: #05070d;
   overflow-x: hidden;
 }
 
-/* 🪐 木星（主役・見えるように調整） */
-.jupiter {
+/* 🪐 木星背景（全ページ共通） */
+body::before {
+  content: "";
   position: fixed;
   inset: 0;
   z-index: -3;
@@ -21,129 +24,110 @@ body {
   background-size: cover;
   background-position: center;
 
-  opacity: 0.45;
-
+  /* おしゃれ化（重要） */
   filter:
-    brightness(0.95)
-    contrast(1.25)
-    saturate(1.4);
+    brightness(0.8)
+    contrast(1.2)
+    saturate(1.3)
+    blur(0px);
 
-  animation: jupiterMove 120s linear infinite;
+  opacity: 0.55;
+
+  transform: scale(1.05);
+  animation: jupiterFloat 120s ease-in-out infinite;
 }
 
-@keyframes jupiterMove {
+/* ゆっくり動く木星 */
+@keyframes jupiterFloat {
   0%   { transform: scale(1.05) translate(0,0); }
-  50%  { transform: scale(1.1) translate(-20px,10px); }
+  50%  { transform: scale(1.1) translate(-20px, 10px); }
   100% { transform: scale(1.05) translate(0,0); }
 }
 
-/* 🌌 星（見えるように強化） */
-body::before {
+/* 🌫️ オーバーレイ（読みやすさ確保） */
+body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
 
-  background-image:
-    radial-gradient(1px 1px at 20px 30px, rgba(200,220,255,0.9), transparent),
-    radial-gradient(1px 1px at 120px 80px, rgba(140,190,255,0.7), transparent),
-    radial-gradient(2px 2px at 300px 220px, rgba(120,180,255,0.6), transparent),
-    radial-gradient(1px 1px at 400px 100px, rgba(180,220,255,0.6), transparent);
-
-  background-size: 500px 500px;
-  opacity: 0.35;
-
-  animation: drift 200s linear infinite;
-}
-
-@keyframes drift {
-  from { transform: translate(0,0); }
-  to { transform: translate(-300px,-200px); }
-}
-
-/* 🌊 波（少し見えるように） */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-
   background:
-    repeating-radial-gradient(
-      circle at 50% 50%,
-      rgba(80,160,255,0.05) 0px,
-      rgba(80,160,255,0.05) 2px,
-      transparent 6px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(0,90,170,0.04),
-      rgba(0,90,170,0.04) 1px,
-      transparent 1px,
-      transparent 8px
-    );
+    radial-gradient(circle at center, rgba(0,0,0,0.35), rgba(0,0,0,0.75));
 
-  opacity: 0.6;
-
-  animation: waveMove 160s linear infinite;
+  pointer-events: none;
 }
 
-@keyframes waveMove {
-  from { transform: translate(0,0); }
-  to { transform: translate(-300px,200px); }
-}
-
-/* 🧊 ヘッダー */
+/* 🧭 ヘッダー */
 header {
   text-align: center;
   padding: 60px 20px;
-  background: rgba(6, 35, 78, 0.55);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(120,180,255,0.2);
+
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 /* タイトル */
 h1 {
   font-size: 2.6em;
-  color: #24528a;
+  margin: 0;
+  letter-spacing: 2px;
 
-  text-shadow:
-    0 0 12px rgba(44, 98, 197, 0.8),
-    0 0 40px rgba(24, 59, 153, 0.5);
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(180,220,255,0.6);
 }
 
-/* 見出し */
+/* サブタイトル */
 h2 {
-  color: #255994;
+  color: #cfe6ff;
+  margin-top: 0;
 }
 
 /* ナビ */
+nav {
+  margin-top: 10px;
+}
+
 nav a {
   margin: 0 12px;
-  color: #2a5f9a;
+  color: #b7d8ff;
   text-decoration: none;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  color: #3a8dff;
-  text-shadow: 0 0 10px rgba(60,120,255,0.6);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(180,220,255,0.8);
 }
 
-/* セクション */
+/* 📄 セクション（ガラスカード） */
 section {
-  max-width: 850px;
-  margin: 60px auto;
-  padding: 35px;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
 
-  background: rgba(7, 43, 96, 0.3);
-  border: 1px solid rgba(9, 42, 83, 0.15);
-  border-radius: 18px;
+  background: rgba(10, 15, 25, 0.55);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* リンク */
+a {
+  color: #9fd3ff;
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(180,220,255,0.7);
 }
 
 /* フッター */
 footer {
   text-align: center;
   padding: 40px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
