@@ -5,9 +5,9 @@ body {
 
   /* 🌌 暗すぎ問題を解消した深宇宙背景 */
   background:
-    radial-gradient(circle at 20% 30%, #0a2a4a 0%, transparent 55%),
-    radial-gradient(circle at 80% 70%, #061a33 0%, transparent 60%),
-    linear-gradient(180deg, #050b18 0%, #03060c 100%);
+    radial-gradient(circle at 20% 30%, #103b66 0%, transparent 55%),
+    radial-gradient(circle at 80% 70%, #103a6e 0%, transparent 60%),
+    linear-gradient(180deg, #122756 0%, #1a315e 100%);
   overflow-x: hidden;
 }
 
@@ -98,24 +98,24 @@ body::after {
 header {
   text-align: center;
   padding: 60px 20px;
-  background: rgba(0,20,50,0.55);
+  background: rgba(6, 35, 78, 0.55);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(120,180,255,0.2);
 }
 
-/* タイトル（深海ブルー） */
+/* タイトル */
 h1 {
   font-size: 2.6em;
-  color: #1b3f6b;
+  color: #24528a;
 
   text-shadow:
-    0 0 12px rgba(40,90,180,0.8),
-    0 0 40px rgba(10,40,120,0.5);
+    0 0 12px rgba(44, 98, 197, 0.8),
+    0 0 40px rgba(24, 59, 153, 0.5);
 }
 
 /* 見出し */
 h2 {
-  color: #1e4f86;
+  color: #255994;
 }
 
 /* ナビ */
@@ -136,8 +136,8 @@ section {
   margin: 60px auto;
   padding: 35px;
 
-  background: rgba(0,20,50,0.3);
-  border: 1px solid rgba(120,180,255,0.15);
+  background: rgba(7, 43, 96, 0.3);
+  border: 1px solid rgba(9, 42, 83, 0.15);
   border-radius: 18px;
 }
 
