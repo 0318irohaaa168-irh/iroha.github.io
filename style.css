@@ -3,7 +3,7 @@ body {
   font-family: "Arial", sans-serif;
   color: #e6ecff;
 
-  /* 深宇宙グラデーション */
+  /* 宇宙グラデーション */
   background: radial-gradient(circle at 20% 20%, #0d1b3d, #000 60%),
               radial-gradient(circle at 80% 80%, #050816, #000);
   overflow-x: hidden;
