@@ -53,7 +53,7 @@ body::after {
   );
 }
 
-/* ヘッダー *//////////////////////////////////////////////////////////
+/* ヘッダー */
 header {
   text-align: center;
   padding: 70px 20px;
@@ -154,7 +154,7 @@ section {
     0 10px 40px rgba(0,0,0,0.5);
 }
 
-/* 🗓 Schedule */
+/*  Schedule */
 .schedule-list {
   list-style: none;
   padding: 0;
@@ -202,7 +202,7 @@ section {
   text-shadow: 0 0 8px rgba(150,200,255,0.8);
 }
 
-/* リンク *//////////////////////////////////////////////////////////////////
+/* リンク */
 a {
   color: #9fd3ff;
 }
