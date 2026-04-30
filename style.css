@@ -97,31 +97,24 @@ nav a {
 
 /* 📄 本文（絶対中央固定） */
 section {
-  max-width: 850px;
-  margin: 50px auto;  /* ←これだけ！ */
+  max-width: 900px;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  margin-left: 300px;   /* ←ここで右に寄せる（調整OK） */
+  margin-right: auto;
+
   padding: 30px;
 
   background: rgba(10, 15, 25, 0.55);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 16px;
-}
 
-/* 🗓 スケジュール（完全左端） */
-.sidebar-schedule {
-  position: fixed;
-  top: 100px;
+  backdrop-filter: blur(10px);
 
-  left: 5;        /* ←ここが重要 */
-  transform: translateX(-30px); /* ←さらに左に押し出す */
-
-  width: 260px;
-
-  padding: 20px;
-
-  background: rgba(10, 15, 25, 0.85);
-
-  border-radius: 0 14px 14px 0;
-
-  z-index: 100;
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.5);
 }
 
 /* リンク */
