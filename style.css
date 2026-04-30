@@ -155,7 +155,7 @@ section {
 .sidebar-schedule {
   position: fixed;
   top: 100px;
-  left: -10px;
+  left: -50px;
 
   width: 260px;
   max-height: 75vh;
