@@ -10,9 +10,6 @@ body {
 
   background: #05070d;
   overflow-x: hidden;
-
-  /* ←これで左に余白（スケジュール分） */
-  padding-left: 280px;
 }
 
 /* 🪐 木星背景 */
@@ -71,6 +68,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -79,9 +77,15 @@ nav a {
   background: rgba(255,255,255,0.08);
   color: #b7d8ff;
   text-decoration: none;
+  transition: 0.2s;
 }
 
-/* 本文（中央固定） */
+nav a:hover {
+  background: rgba(120,180,255,0.2);
+  color: #ffffff;
+}
+
+/* 📄 セクション（全部中央） */
 section {
   max-width: 900px;
   margin: 50px auto;
@@ -89,52 +93,44 @@ section {
 
   background: rgba(10, 15, 25, 0.55);
   border-radius: 16px;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
-/* 🗓 スケジュール（左固定） */
-.sidebar-schedule {
-  position: fixed;
-  top: 100px;
-  left: 0;
-
-  width: 260px;
-  padding: 20px;
-
-  background: rgba(10, 15, 25, 0.85);
-  border-radius: 0 14px 14px 0;
-
-  z-index: 1000;
-}
-
+/* 🗓 スケジュール（中央表示） */
 .schedule-list {
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+.schedule-list li {
+  margin-bottom: 16px;
 }
 
 .date {
-  font-size: 0.8em;
+  display: block;
+  font-size: 0.85em;
   color: #9fd3ff;
+  margin-bottom: 4px;
 }
 
 .event {
-  font-size: 0.9em;
+  font-size: 0.95em;
+  color: #eaf2ff;
+  text-decoration: none;
+}
+
+.event:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(150,200,255,0.7);
 }
 
 /* フッター */
 footer {
   text-align: center;
   padding: 40px;
-}
-
-/* 📱 スマホ */
-@media (max-width: 900px) {
-  body {
-    padding-left: 0;
-  }
-
-  .sidebar-schedule {
-    position: static;
-    width: auto;
-    margin: 20px;
-  }
+  opacity: 0.7;
 }
