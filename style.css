@@ -1,101 +1,46 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #0a0f2c, #000000);
-  color: #e0e6ff;
+  background: radial-gradient(circle at top, #0a0f2c, #000);
+  color: #e6ecff;
 }
 
 header {
   text-align: center;
   padding: 40px;
+  background: rgba(10, 15, 40, 0.6);
+  backdrop-filter: blur(10px);
 }
 
-h1 {
+h1, h2 {
   color: #66aaff;
+  text-shadow: 0 0 10px rgba(102,170,255,0.4);
 }
 
 nav a {
-  margin: 0 15px;
-  color: #88ccff;
+  margin: 0 10px;
+  color: #9ad1ff;
   text-decoration: none;
 }
 
 nav a:hover {
-  color: #ffffff;
-}
-
-.hero {
-  text-align: center;
-  padding: 100px 20px;
+  text-shadow: 0 0 8px #66aaff;
 }
 
 section {
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-h2 {
-  color: #66aaff;
-  border-bottom: 1px solid #66aaff;
-  padding-bottom: 10px;
-}
-
-a {
-  color: #88ccff;
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
 }
 
 footer {
   text-align: center;
-  padding: 20px;
-  font-size: 0.8em;
+  padding: 30px;
   opacity: 0.6;
 }
 
-/* ガラスっぽいカード */
-section {
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: 40px auto;
-  background: rgba(20, 30, 80, 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(100, 150, 255, 0.2);
-}
-
-/* ヘッダー固定（ちょいプロ感） */
-header {
-  position: sticky;
-  top: 0;
-  background: rgba(10, 15, 44, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: 100;
-}
-
-/* ホバーで光る */
-a:hover {
-  text-shadow: 0 0 5px #66aaff;
-}
-
-/* タイトルちょい発光 */
-h1, h2 {
-  text-shadow: 0 0 10px rgba(100, 150, 255, 0.5);
-}
-
-/* 星空 */
-.stars {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 50px 50px;
-  opacity: 0.2;
-  z-index: -1;
-  animation: moveStars 100s linear infinite;
-}
-
-@keyframes moveStars {
-  from { transform: translateY(0); }
-  to { transform: translateY(-1000px); }
+a {
+  color: #8ecbff;
 }
