@@ -93,5 +93,14 @@
   Last updated: 2026/04/29.
 </footer>
 
+  <script>
+  document.querySelectorAll(".event").forEach(btn => {
+    btn.addEventListener("click", function() {
+      document.querySelectorAll(".event").forEach(b => b.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+  </script>
+
 </body>
 </html>
