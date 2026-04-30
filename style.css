@@ -127,3 +127,46 @@ footer {
   text-align: center;
   padding: 40px;
 }
+
+/* 🗓 スケジュール左固定（復活） */
+.sidebar-schedule {
+  position: fixed;
+  top: 120px;
+  left: 0;
+
+  width: 260px;
+
+  padding: 20px;
+
+  background: rgba(10, 15, 25, 0.85);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.15);
+  border-left: none;
+  border-radius: 0 14px 14px 0;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+  z-index: 999;
+}
+
+/* 中身 */
+.sidebar-schedule .schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-schedule .schedule-list li {
+  margin-bottom: 12px;
+}
+
+.sidebar-schedule .date {
+  display: block;
+  font-size: 0.8em;
+  color: #9fd3ff;
+}
+
+.sidebar-schedule .event {
+  font-size: 0.9em;
+}
