@@ -1,9 +1,8 @@
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
   color: #d6e6ff;
 
-  /* 🌌 深淵ベース */
   background:
     radial-gradient(circle at 20% 30%, #001a33 0%, transparent 55%),
     radial-gradient(circle at 80% 70%, #00060f 0%, transparent 60%),
@@ -11,135 +10,129 @@ body {
   overflow-x: hidden;
 }
 
-/* 🌊 深海の層（ゆらぎ模様） */
+/* 🪐 木星 */
+.jupiter {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg");
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.18;
+  filter: brightness(0.4) contrast(1.4) saturate(1.2);
+
+  animation: jupiterMove 120s linear infinite;
+}
+
+@keyframes jupiterMove {
+  0%   { transform: scale(1.05) translate(0,0); }
+  50%  { transform: scale(1.1) translate(-20px,10px); }
+  100% { transform: scale(1.05) translate(0,0); }
+}
+
+/* 🌌 星 */
 body::before {
   content: "";
   position: fixed;
   width: 200%;
   height: 200%;
-  background:
-    radial-gradient(circle at 10% 20%, rgba(80,150,255,0.12) 0%, transparent 25%),
-    radial-gradient(circle at 70% 60%, rgba(0,200,255,0.08) 0%, transparent 30%),
-    radial-gradient(circle at 40% 80%, rgba(0,80,200,0.10) 0%, transparent 35%),
+  z-index: -2;
 
-    /* 🌊 波模様（追加） */
-    repeating-radial-gradient(
-      circle at 50% 50%,
-      rgba(120,180,255,0.05) 0px,
-      rgba(120,180,255,0.05) 2px,
-      transparent 6px,
-      transparent 12px
-    );
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(180,220,255,0.8), transparent),
+    radial-gradient(1px 1px at 120px 80px, rgba(120,200,255,0.6), transparent),
+    radial-gradient(2px 2px at 300px 220px, rgba(100,180,255,0.5), transparent);
+
+  background-size: 500px 500px;
+  opacity: 0.25;
 
   animation: drift 200s linear infinite;
-  z-index: -2;
 }
 
-/* ✨ 星＋粒子＋深海ノイズ */
+@keyframes drift {
+  from { transform: translate(0,0); }
+  to { transform: translate(-300px,-200px); }
+}
+
+/* 🌊 波 */
 body::after {
   content: "";
   position: fixed;
   width: 200%;
   height: 200%;
-  background-image:
-
-    /* 星層 */
-    radial-gradient(1px 1px at 20px 30px, rgba(180,220,255,0.8), transparent),
-    radial-gradient(1px 1px at 120px 80px, rgba(120,200,255,0.6), transparent),
-    radial-gradient(1px 1px at 200px 150px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(2px 2px at 300px 220px, rgba(100,180,255,0.5), transparent),
-
-    /* 🫧 深海バブル模様 */
-    radial-gradient(circle at 60px 100px, rgba(100,180,255,0.08) 2px, transparent 3px),
-    radial-gradient(circle at 180px 200px, rgba(120,220,255,0.06) 3px, transparent 5px),
-    radial-gradient(circle at 320px 140px, rgba(80,160,255,0.05) 2px, transparent 4px);
-
-  background-size: 500px 500px;
-  opacity: 0.3;
-  animation: drift2 260s linear infinite;
   z-index: -1;
-}
-
-/* 🌊 流れ */
-@keyframes drift {
-  from { transform: translate(0,0); }
-  to { transform: translate(-300px, -200px); }
-}
-
-@keyframes drift2 {
-  from { transform: translate(0,0); }
-  to { transform: translate(200px, 300px); }
-}
-
-/* 🧊 ヘッダー（深海プレート） */
-header {
-  text-align: center;
-  padding: 60px 20px;
 
   background:
-    linear-gradient(180deg, rgba(0,20,50,0.7), rgba(0,0,0,0.2)),
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(80,160,255,0.04) 0px,
+      rgba(80,160,255,0.04) 2px,
+      transparent 6px,
+      transparent 12px
+    ),
     repeating-linear-gradient(
-      45deg,
-      rgba(80,140,255,0.05),
-      rgba(80,140,255,0.05) 2px,
-      transparent 2px,
+      0deg,
+      rgba(0,80,160,0.03),
+      rgba(0,80,160,0.03) 1px,
+      transparent 1px,
       transparent 8px
     );
 
-  backdrop-filter: blur(14px);
+  animation: waveMove 160s linear infinite;
+}
+
+@keyframes waveMove {
+  from { transform: translate(0,0); }
+  to { transform: translate(-300px,200px); }
+}
+
+/* ヘッダー */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0,20,50,0.5);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(120,180,255,0.2);
 }
 
-/* 🌌 タイトル */
 h1 {
   font-size: 2.6em;
-  letter-spacing: 3px;
-  color: #9ad0ff;
-
+  color: #0a2a4a;
   text-shadow:
-    0 0 10px rgba(120,200,255,0.8),
-    0 0 30px rgba(0,120,255,0.4),
-    0 0 60px rgba(0,60,180,0.3);
+    0 0 10px rgba(30,80,180,0.8),
+    0 0 40px rgba(10,40,120,0.6);
 }
 
-/* 🌊 セクション（地層・水圧感） */
+h2 {
+  color: #102a5c;
+}
+
+/* ナビ */
+nav a {
+  margin: 0 12px;
+  color: #1a3d6b;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #2f6fff;
+  text-shadow: 0 0 10px rgba(30,80,255,0.6);
+}
+
+/* セクション */
 section {
   max-width: 850px;
   margin: 60px auto;
   padding: 35px;
-
-  background:
-    linear-gradient(135deg, rgba(0,20,50,0.25), rgba(0,0,0,0.1)),
-    repeating-linear-gradient(
-      90deg,
-      rgba(120,180,255,0.03),
-      rgba(120,180,255,0.03) 1px,
-      transparent 1px,
-      transparent 6px
-    );
-
+  background: rgba(0,20,50,0.25);
   border: 1px solid rgba(120,180,255,0.12);
   border-radius: 18px;
-
-  box-shadow:
-    0 0 25px rgba(0,100,255,0.08),
-    inset 0 0 25px rgba(0,80,200,0.05);
 }
 
-/* 🌊 リンク */
-a {
-  color: #8ecbff;
-  transition: 0.3s;
-}
-
-a:hover {
-  color: #ffffff;
-  text-shadow:
-    0 0 10px #66ccff,
-    0 0 20px #3399ff;
-}
-
-/* 🌑 フッター（深淵底） */
+/* フッター */
 footer {
   text-align: center;
   padding: 40px;
