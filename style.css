@@ -110,7 +110,7 @@ section {
   position: fixed;
   top: 100px;
 
-  left: 0;        /* ←ここが重要 */
+  left: 5;        /* ←ここが重要 */
   transform: translateX(-30px); /* ←さらに左に押し出す */
 
   width: 260px;
