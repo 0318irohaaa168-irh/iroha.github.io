@@ -1,54 +1,149 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #0a0f2c, #000000);
-  color: #e0e6ff;
+  color: #d6e6ff;
+
+  /* 🌌 暗すぎ問題を解消した深宇宙背景 */
+  background:
+    radial-gradient(circle at 20% 30%, #0a2a4a 0%, transparent 55%),
+    radial-gradient(circle at 80% 70%, #061a33 0%, transparent 60%),
+    linear-gradient(180deg, #050b18 0%, #03060c 100%);
+  overflow-x: hidden;
 }
 
-/* ヘッダー */
+/* 🪐 木星（主役・見えるように調整） */
+.jupiter {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+
+  background-image: url("./jup.jpg");
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.45;
+
+  filter:
+    brightness(0.95)
+    contrast(1.25)
+    saturate(1.4);
+
+  animation: jupiterMove 120s linear infinite;
+}
+
+@keyframes jupiterMove {
+  0%   { transform: scale(1.05) translate(0,0); }
+  50%  { transform: scale(1.1) translate(-20px,10px); }
+  100% { transform: scale(1.05) translate(0,0); }
+}
+
+/* 🌌 星（見えるように強化） */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(200,220,255,0.9), transparent),
+    radial-gradient(1px 1px at 120px 80px, rgba(140,190,255,0.7), transparent),
+    radial-gradient(2px 2px at 300px 220px, rgba(120,180,255,0.6), transparent),
+    radial-gradient(1px 1px at 400px 100px, rgba(180,220,255,0.6), transparent);
+
+  background-size: 500px 500px;
+  opacity: 0.35;
+
+  animation: drift 200s linear infinite;
+}
+
+@keyframes drift {
+  from { transform: translate(0,0); }
+  to { transform: translate(-300px,-200px); }
+}
+
+/* 🌊 波（少し見えるように） */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(80,160,255,0.05) 0px,
+      rgba(80,160,255,0.05) 2px,
+      transparent 6px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,90,170,0.04),
+      rgba(0,90,170,0.04) 1px,
+      transparent 1px,
+      transparent 8px
+    );
+
+  opacity: 0.6;
+
+  animation: waveMove 160s linear infinite;
+}
+
+@keyframes waveMove {
+  from { transform: translate(0,0); }
+  to { transform: translate(-300px,200px); }
+}
+
+/* 🧊 ヘッダー */
 header {
   text-align: center;
-  padding: 40px 20px;
-  background: rgba(10, 15, 44, 0.7);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
+  padding: 60px 20px;
+  background: rgba(0,20,50,0.55);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(120,180,255,0.2);
+}
+
+/* タイトル（深海ブルー） */
+h1 {
+  font-size: 2.6em;
+  color: #1b3f6b;
+
+  text-shadow:
+    0 0 12px rgba(40,90,180,0.8),
+    0 0 40px rgba(10,40,120,0.5);
+}
+
+/* 見出し */
+h2 {
+  color: #1e4f86;
 }
 
 /* ナビ */
 nav a {
   margin: 0 12px;
-  color: #88ccff;
+  color: #2a5f9a;
   text-decoration: none;
 }
 
 nav a:hover {
-  text-shadow: 0 0 8px #66aaff;
+  color: #3a8dff;
+  text-shadow: 0 0 10px rgba(60,120,255,0.6);
 }
 
-/* セクションカード */
+/* セクション */
 section {
-  max-width: 800px;
-  margin: 40px auto;
+  max-width: 850px;
+  margin: 60px auto;
+  padding: 35px;
+
+  background: rgba(0,20,50,0.3);
+  border: 1px solid rgba(120,180,255,0.15);
+  border-radius: 18px;
+}
+
+/* フッター */
+footer {
+  text-align: center;
   padding: 40px;
-  background: rgba(20, 30, 80, 0.25);
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(100, 150, 255, 0.15);
-}
-
-/* 見出し */
-h1, h2 {
-  color: #66aaff;
-  text-shadow: 0 0 10px rgba(100, 150, 255, 0.4);
-}
-
-/* 星空 */
-.stars {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 50px 50px;
-  opacity: 0.15;
-  z-index: -1;
+  opacity: 0.5;
 }
