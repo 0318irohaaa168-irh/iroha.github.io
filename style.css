@@ -99,7 +99,7 @@ section {
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
-/* 🗓 スケジュール（中央表示） */
+/* 🗓 スケジュール（宇宙UI版） */
 .schedule-list {
   list-style: none;
   padding: 0;
@@ -107,26 +107,60 @@ section {
 }
 
 .schedule-list li {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
+/* 日付 */
 .date {
   display: block;
   font-size: 0.85em;
   color: #9fd3ff;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  opacity: 0.8;
 }
 
+/* 🔥 イベント（ボタン化） */
 .event {
-  font-size: 0.95em;
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+
+  background: rgba(120,180,255,0.15);
+  border: 1px solid rgba(120,180,255,0.4);
+
   color: #eaf2ff;
   text-decoration: none;
+
+  transition: all 0.25s ease;
 }
 
+/* 🌟 ホバー（浮く） */
 .event:hover {
+  transform: translateY(-3px);
+
+  background: rgba(120,180,255,0.3);
   color: #ffffff;
-  text-shadow: 0 0 8px rgba(150,200,255,0.7);
+
+  box-shadow:
+    0 0 12px rgba(120,180,255,0.5),
+    0 0 30px rgba(80,140,255,0.2);
 }
+
+/* 👆 クリック中 */
+.event:active {
+  transform: scale(0.95);
+  background: rgba(80,140,255,0.7);
+}
+
+/* ✅ クリック後（固定発光） */
+.event.active {
+  background: rgba(80,140,255,0.85);
+
+  box-shadow:
+    0 0 15px rgba(120,180,255,0.8),
+    0 0 40px rgba(80,140,255,0.3);
+}
+
 
 /* フッター */
 footer {
