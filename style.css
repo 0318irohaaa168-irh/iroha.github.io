@@ -1,59 +1,96 @@
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
-  color: #e6ecff;
+  color: #d6e6ff;
 
-  /* 宇宙グラデーション */
-  background: radial-gradient(circle at 20% 20%, #0d1b3d, #000 60%),
-              radial-gradient(circle at 80% 80%, #050816, #000);
+  /* 🌊 深淵＋宇宙グラデーション */
+  background:
+    radial-gradient(circle at 20% 30%, #001a33 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, #00060f 0%, transparent 55%),
+    linear-gradient(180deg, #000010 0%, #000000 60%, #000008 100%);
   overflow-x: hidden;
 }
 
-/* 星空レイヤー */
+/* 🌌 深海の揺らぎ */
 body::before {
   content: "";
   position: fixed;
   width: 200%;
   height: 200%;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 60px 60px;
-  opacity: 0.12;
-  animation: drift 120s linear infinite;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(80,150,255,0.15) 0%, transparent 30%),
+    radial-gradient(circle at 70% 60%, rgba(0,200,255,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 40% 80%, rgba(0,80,200,0.10) 0%, transparent 35%);
+  animation: drift 180s linear infinite;
+  z-index: -2;
+}
+
+/* ✨ 星（深海粒子＋宇宙） */
+body::after {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(180,220,255,0.8), transparent),
+    radial-gradient(1px 1px at 120px 80px, rgba(100,180,255,0.6), transparent),
+    radial-gradient(1px 1px at 200px 150px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 300px 220px, rgba(120,200,255,0.5), transparent),
+    radial-gradient(1px 1px at 400px 100px, rgba(80,160,255,0.6), transparent);
+  background-size: 500px 500px;
+  opacity: 0.25;
+  animation: drift2 240s linear infinite;
   z-index: -1;
 }
 
+/* 🌊 ゆっくり流れる深淵 */
 @keyframes drift {
   from { transform: translate(0,0); }
-  to { transform: translate(-200px, -200px); }
+  to { transform: translate(-300px, -200px); }
 }
 
-/* ヘッダー（宇宙ステーション風） */
+@keyframes drift2 {
+  from { transform: translate(0,0); }
+  to { transform: translate(200px, 300px); }
+}
+
+/* 🧊 ヘッダー（深海圧力層） */
 header {
   text-align: center;
-  padding: 50px 20px;
-  background: rgba(10, 15, 40, 0.35);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(102,170,255,0.2);
+  padding: 60px 20px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0,10,30,0.7),
+    rgba(0,0,0,0.2)
+  );
+
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(120,180,255,0.15);
 }
 
-/* タイトル */
+/* 🐋 タイトル（深淵発光） */
 h1 {
-  font-size: 2.4em;
-  letter-spacing: 2px;
-  color: #7ec8ff;
-  text-shadow: 0 0 15px rgba(100,180,255,0.5);
+  font-size: 2.6em;
+  letter-spacing: 3px;
+  color: #9ad0ff;
+
+  text-shadow:
+    0 0 10px rgba(120,200,255,0.8),
+    0 0 30px rgba(0,120,255,0.4),
+    0 0 60px rgba(0,60,180,0.3);
 }
 
-/* サブタイトル */
+/* 🌊 サブタイトル */
 h2 {
-  color: #66aaff;
-  text-shadow: 0 0 10px rgba(102,170,255,0.3);
+  color: #66b3ff;
+  text-shadow: 0 0 12px rgba(100,180,255,0.4);
 }
 
-/* ナビ（惑星UI風） */
+/* 🌌 ナビ（海中光） */
 nav a {
   margin: 0 12px;
-  color: #9ad1ff;
+  color: #a8d6ff;
   text-decoration: none;
   position: relative;
   transition: 0.3s;
@@ -66,37 +103,30 @@ nav a::after {
   bottom: -4px;
   width: 0%;
   height: 1px;
-  background: #66aaff;
-  transition: 0.3s;
+  background: #66ccff;
+  transition: 0.4s;
 }
 
 nav a:hover::after {
   width: 100%;
 }
 
-/* セクション（浮遊カード） */
+/* 🪼 セクション（深海浮遊体） */
 section {
   max-width: 850px;
-  margin: 50px auto;
+  margin: 60px auto;
   padding: 35px;
 
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(120,160,255,0.15);
-  border-radius: 16px;
+  background: rgba(0, 20, 50, 0.25);
+  border: 1px solid rgba(120,180,255,0.12);
+  border-radius: 18px;
 
   box-shadow:
-    0 0 20px rgba(80,120,255,0.08),
-    inset 0 0 20px rgba(80,120,255,0.05);
+    0 0 25px rgba(0,100,255,0.08),
+    inset 0 0 25px rgba(0,80,200,0.05);
 }
 
-/* フッター */
-footer {
-  text-align: center;
-  padding: 40px;
-  opacity: 0.5;
-}
-
-/* リンク */
+/* 🌊 リンク（発光粒子） */
 a {
   color: #8ecbff;
   transition: 0.3s;
@@ -104,5 +134,14 @@ a {
 
 a:hover {
   color: #ffffff;
-  text-shadow: 0 0 10px #66aaff;
+  text-shadow:
+    0 0 10px #66ccff,
+    0 0 20px #3399ff;
+}
+
+/* 🌑 フッター（深淵の底） */
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.4;
 }
