@@ -6,13 +6,14 @@ body {
   margin: 0;
   font-family: "Arial", sans-serif;
   color: #eaf2ff;
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 18px;
 
   background: #05070d;
   overflow-x: hidden;
 }
 
-/* 🪐 木星背景 */
+/* 背景 */
 body::before {
   content: "";
   position: fixed;
@@ -25,18 +26,9 @@ body::before {
 
   filter: brightness(1.15) contrast(1.2) saturate(1.3);
   opacity: 0.75;
-
-  transform: scale(1.05);
-  animation: jupiterFloat 140s ease-in-out infinite;
 }
 
-@keyframes jupiterFloat {
-  0%   { transform: scale(1.05) translate(0,0); }
-  50%  { transform: scale(1.1) translate(-25px, 15px); }
-  100% { transform: scale(1.05) translate(0,0); }
-}
-
-/* 🌫️ 暗幕 */
+/* 暗幕 */
 body::after {
   content: "";
   position: fixed;
@@ -49,16 +41,20 @@ body::after {
   );
 }
 
-/* 🧭 ヘッダー */
+/* ヘッダー */
 header {
   text-align: center;
   padding: 70px 20px;
 }
 
 h1 {
-  font-size: 2.8em;
+  font-size: 3.2em;
   margin: 0;
   color: #ffffff;
+}
+
+h2 {
+  font-size: 1.6em;
 }
 
 /* ナビ */
@@ -76,72 +72,54 @@ nav a {
   background: rgba(255,255,255,0.08);
   color: #b7d8ff;
   text-decoration: none;
-  transition: 0.2s;
 }
 
 nav a:hover {
   background: rgba(120,180,255,0.25);
-  color: #ffffff;
+  color: #fff;
 }
 
-/* 📄 セクション */
+/* セクション */
 section {
   width: 900px;
   max-width: 95vw;
   margin: 50px auto;
 
   padding: 30px;
-
   background: rgba(10, 15, 25, 0.55);
   border-radius: 16px;
-
-  backdrop-filter: blur(8px);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
-/* 🗓 スケジュール（整列版） */
+/* ===== スケジュール統一 ===== */
 .schedule-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/* 1行レイアウト */
 .schedule-list li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 
-  padding: 10px 12px;
+  padding: 12px;
   margin-bottom: 12px;
 
   background: rgba(255,255,255,0.04);
   border-radius: 10px;
 }
 
-/* 📅 日時（左固定幅） */
+/* 日付 */
 .date {
-  min-width: 180px;
-  font-size: 0.85em;
-  color: #9fd3ff;
-  opacity: 0.9;
+  width: 180px;
   font-family: monospace;
-}
-
-.time-block {
-  display: flex;
-  gap: 12px;
-  margin-top: 6px;
-  padding-left: 60px; /* 曜日と揃えるため */
-}
-
-.time {
-  min-width: 120px;
   color: #9fd3ff;
-  font-family: monospace;
+  font-size: 0.95em;
 }
 
-/* 🔥 スケジュール内容（リンク） */
-.event {
+/* ボタン統一（event-btnに統一！） */
+.event-btn {
   flex: 1;
   display: inline-block;
 
@@ -151,33 +129,41 @@ section {
   background: rgba(80,140,255,0.25);
   border: 1px solid rgba(120,180,255,0.5);
 
-  color: #f2f8ff; /* ←ここ重要（明るくした） */
+  color: #f2f8ff;
   text-decoration: none;
 
   transition: 0.25s;
 }
 
 /* hover */
-.event:hover {
+.event-btn:hover {
   transform: translateY(-3px);
   background: rgba(120,180,255,0.4);
-  color: #ffffff;
-
-  box-shadow:
-    0 0 12px rgba(120,180,255,0.6),
-    0 0 30px rgba(80,140,255,0.3);
+  color: #fff;
 }
 
 /* active */
-.event:active {
+.event-btn:active {
   transform: scale(0.97);
-  background: rgba(80,140,255,0.7);
 }
 
 /* クリック後 */
-.event.active {
+.event-btn.active {
   background: rgba(120,180,255,0.9);
-  color: #ffffff;
+  color: #fff;
+}
+
+/* Wedだけ縦構造 */
+.time-block {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.time {
+  width: 120px;
+  color: #9fd3ff;
+  font-family: monospace;
 }
 
 /* フッター */
@@ -185,39 +171,4 @@ footer {
   text-align: center;
   padding: 40px;
   opacity: 0.7;
-}
-
-body {
-  font-size: 18px; /* ←全体の基準サイズアップ */
-  line-height: 1.8;
-}
-
-/* タイトル */
-h1 {
-  font-size: 3.2em;
-}
-
-/* セクション見出し */
-h2 {
-  font-size: 1.6em;
-}
-
-/* ナビ */
-nav a {
-  font-size: 1.05em;
-}
-
-/* 本文ブロック */
-section {
-  font-size: 1.05em;
-}
-
-/* スケジュール日付 */
-.date {
-  font-size: 0.95em;
-}
-
-/* スケジュールリンク */
-.event {
-  font-size: 1.05em;
 }
