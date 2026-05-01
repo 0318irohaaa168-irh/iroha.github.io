@@ -8,12 +8,9 @@
 
 <body>
 
-<!-- 木星背景（必須） -->
-<div class="jupiter"></div>
-
 <header> 
   <h1>Iroha Miyamoto</h1>
-  <p>welcome to my page:D </p>
+  <p>welcome to my page:D</p>
   <p>mail: miyamoto.iroha[at]stu.kobe-u.ac.jp</p>
 
   <nav>
@@ -29,22 +26,16 @@
   <h2>About</h2>
   <p>
     PhD student in planetary science.  
-    Focus on moist convection and in Jovian atmospheres.
+    Focus on moist convection in Jovian atmospheres.
   </p>
 </section>
 
 <!-- Schedule -->
 <section id="schedule">
   <h2>Schedule</h2>
+
   <ul class="schedule-list">
-    
-    <li>
-      <span class="date">2026.05.24 ~ 2026.05.29</span>
-      <a href="https://www.jpgu.org/meeting_j2026/" target="_blank" class="event-btn">
-        JpGU-AGU Joint Meeting 2026
-      </a>
-    </li>
-    
+
     <li>
       <span class="date">2026.05.24 ~ 2026.05.29</span>
       <a href="https://www.jpgu.org/meeting_j2026/" target="_blank" class="event-btn">
@@ -65,14 +56,14 @@
         日本惑星科学会 2026年秋季講演会 @朱鷺メッセ国際会議室
       </a>
     </li>
-    
+
     <li>
       <span class="date">2026.10.26 ~ 2026.10.30</span>
       <a href="https://www.metsoc.jp/meetings/2026a" target="_blank" class="event-btn">
         気象学会 2026年度秋季大会 @京都テルサ
       </a>
     </li>
-     
+
     <li>
       <span class="date">2026.11.08 ~ 2026.11.12</span>
       <a href="https://www.sgepss.org/meeting/index.html" target="_blank" class="event-btn">
@@ -88,6 +79,7 @@
   <h2>Weekly Schedule</h2>
 
   <ul class="schedule-list">
+
     <li>
       <span class="day">Mon</span>
       <span class="time">13:00–</span>
@@ -117,34 +109,35 @@
       <span class="time">13:00–18:00</span>
       <span class="event">RA</span>
     </li>
+
   </ul>
 </section>
 
 <!-- Background -->
-<section id="Background">
+<section id="background">
   <h2>Background</h2>
   <ul>
-  <li>2002: Born in Fukuoka, Japan.
-  <li>2017–2020: Fukuoka Prefectural Kurume High School. 
-  <li>2020–2024: BSc, Department of Earth System Science, School of Science, Fukuoka University. Belonged to the Laboratory of Meteorology and Planetary Sciences.
-  <li>2024–2026: MSc, Department of Earth and Planetary Sciences, Graduate School of Science, Kyushu University. Belonged to the Atmospheric Fluid Dynamics Laboratory.
-  <li>2026–20XX: PhD student, Department of Planetology, Graduate School of Science, Kobe University. Member of the Earth and Planetary Atmospheric Science Group (Fluid Geophysics).
+    <li>2002: Born in Fukuoka, Japan.</li>
+    <li>2017–2020: Fukuoka Prefectural Kurume High School.</li>
+    <li>2020–2024: BSc, Fukuoka University.</li>
+    <li>2024–2026: MSc, Kyushu University.</li>
+    <li>2026–20XX: PhD student, Kobe University.</li>
   </ul>
 </section>
-  
+
 <footer>
   © 2026 Iroha Miyamoto<br>
   Last updated: 2026/04/29.
 </footer>
 
-  <script>
-  document.querySelectorAll(".event").forEach(btn => {
-    btn.addEventListener("click", function() {
-      document.querySelectorAll(".event").forEach(b => b.classList.remove("active"));
-      this.classList.add("active");
-    });
+<script>
+document.querySelectorAll(".event-btn").forEach(btn => {
+  btn.addEventListener("click", function() {
+    document.querySelectorAll(".event-btn").forEach(b => b.classList.remove("active"));
+    this.classList.add("active");
   });
-  </script>
+});
+</script>
 
 </body>
 </html>
