@@ -55,7 +55,6 @@ header {
   padding: 70px 20px;
 }
 
-/* タイトル */
 h1 {
   font-size: 2.8em;
   margin: 0;
@@ -81,11 +80,11 @@ nav a {
 }
 
 nav a:hover {
-  background: rgba(120,180,255,0.2);
+  background: rgba(120,180,255,0.25);
   color: #ffffff;
 }
 
-/* 📄 共通セクション（完全中央固定） */
+/* 📄 セクション */
 section {
   width: 900px;
   max-width: 95vw;
@@ -100,7 +99,7 @@ section {
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
-/* 🗓 スケジュール統一（これだけ使う） */
+/* 🗓 スケジュール（整列版） */
 .schedule-list {
   list-style: none;
   padding: 0;
@@ -108,57 +107,64 @@ section {
 }
 
 .schedule-list li {
-  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 10px 12px;
+  margin-bottom: 12px;
+
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
 }
 
-/* 日付 */
+/* 📅 日時（左固定幅） */
 .date {
-  display: block;
+  min-width: 180px;
   font-size: 0.85em;
   color: #9fd3ff;
-  margin-bottom: 6px;
-  opacity: 0.8;
+  opacity: 0.9;
+  font-family: monospace;
 }
 
-/* イベント（ボタン） */
+/* 🔥 スケジュール内容（リンク） */
 .event {
+  flex: 1;
   display: inline-block;
-  padding: 10px 16px;
+
+  padding: 10px 14px;
   border-radius: 10px;
 
-  background: rgba(120,180,255,0.15);
-  border: 1px solid rgba(120,180,255,0.4);
+  background: rgba(80,140,255,0.25);
+  border: 1px solid rgba(120,180,255,0.5);
 
-  color: #eaf2ff;
+  color: #f2f8ff; /* ←ここ重要（明るくした） */
   text-decoration: none;
 
-  transition: all 0.25s ease;
+  transition: 0.25s;
 }
 
 /* hover */
 .event:hover {
   transform: translateY(-3px);
-  background: rgba(120,180,255,0.3);
+  background: rgba(120,180,255,0.4);
   color: #ffffff;
 
   box-shadow:
-    0 0 12px rgba(120,180,255,0.5),
-    0 0 30px rgba(80,140,255,0.2);
+    0 0 12px rgba(120,180,255,0.6),
+    0 0 30px rgba(80,140,255,0.3);
 }
 
-/* active（クリック中） */
+/* active */
 .event:active {
-  transform: scale(0.95);
+  transform: scale(0.97);
   background: rgba(80,140,255,0.7);
 }
 
-/* active（JSで付ける） */
+/* クリック後 */
 .event.active {
-  background: rgba(80,140,255,0.85);
-
-  box-shadow:
-    0 0 15px rgba(120,180,255,0.8),
-    0 0 40px rgba(80,140,255,0.3);
+  background: rgba(120,180,255,0.9);
+  color: #ffffff;
 }
 
 /* フッター */
