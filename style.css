@@ -162,6 +162,45 @@ section {
 }
 
 
+#weekly-schedule .schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#weekly-schedule .schedule-list li {
+  display: flex;
+  gap: 14px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+
+  transition: 0.2s;
+}
+
+#weekly-schedule .schedule-list li:hover {
+  transform: translateX(5px);
+  background: rgba(120,180,255,0.12);
+}
+
+#weekly-schedule .day {
+  width: 60px;
+  color: #9fd3ff;
+  font-weight: bold;
+}
+
+#weekly-schedule .time {
+  width: 120px;
+  color: #cfe6ff;
+}
+
+#weekly-schedule .event {
+  color: #eaf2ff;
+}
+
 /* フッター */
 footer {
   text-align: center;
