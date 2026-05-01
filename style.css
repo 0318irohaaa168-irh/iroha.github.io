@@ -173,3 +173,38 @@ footer {
   padding: 40px;
   opacity: 0.7;
 }
+
+body {
+  font-size: 18px; /* ←全体の基準サイズアップ */
+  line-height: 1.8;
+}
+
+/* タイトル */
+h1 {
+  font-size: 3.2em;
+}
+
+/* セクション見出し */
+h2 {
+  font-size: 1.6em;
+}
+
+/* ナビ */
+nav a {
+  font-size: 1.05em;
+}
+
+/* 本文ブロック */
+section {
+  font-size: 1.05em;
+}
+
+/* スケジュール日付 */
+.date {
+  font-size: 0.95em;
+}
+
+/* スケジュールリンク */
+.event {
+  font-size: 1.05em;
+}
