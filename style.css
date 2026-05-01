@@ -127,6 +127,19 @@ section {
   font-family: monospace;
 }
 
+.time-block {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  padding-left: 60px; /* 曜日と揃えるため */
+}
+
+.time {
+  min-width: 120px;
+  color: #9fd3ff;
+  font-family: monospace;
+}
+
 /* 🔥 スケジュール内容（リンク） */
 .event {
   flex: 1;
